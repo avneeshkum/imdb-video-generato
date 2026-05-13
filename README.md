@@ -1,146 +1,124 @@
-# IMDb → 2-Minute Video Generator (Bilingual)
+# 🎬 AI IMDb Video Generator (Bilingual)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Framework: Gemini](https://img.shields.io/badge/AI-Gemini_1.5_Flash-orange.svg)](https://aistudio.google.com/)
 
-An autonomous AI pipeline that generates a full 2-minute cinematic movie review/summary video simply by providing a movie name. Now supports both **English** and **Hindi** outputs.
-
----
-
-## 🚀 Key Features
-
-* **Bilingual Support:** Generate videos in either English or Hindi (Devanagari script + Natural Narration).
-* **Automatic Data Fetching:** Pulls movie metadata, ratings, and high-quality backdrops from TMDB.
-* **AI Script Writing:** Uses Gemini 1.5 Flash to write engaging, 2-minute cinematic scripts.
-* **Natural Voiceovers:** Uses Microsoft Edge TTS (Neural) for high-quality, human-like narration.
-* **Automated Editing:** MoviePy handles the assembly of title cards, images, and audio into a final MP4.
+An autonomous AI pipeline that transforms a movie title into a full **2-minute cinematic summary video**. 
+Now featuring full **Bilingual (English & Hindi)** support for global and local audiences.
 
 ---
 
-## 🛠️ Tech Stack (100% Free)
+## 🌟 Key Highlights
 
-| Stage | Tool | Cost |
-| --- | --- | --- |
-| **Movie Data** | TMDB API | Free |
-| **Script Generation** | Gemini 1.5 Flash | Free |
-| **Voice Over** | Edge TTS (Neural) | Free |
-| **Video Assembly** | MoviePy + FFmpeg | Free |
+*   **🌐 Bilingual Narration:** Swappable language logic for English (British/American) and Hindi (Natural Devanagari voiceover).
+*   **🤖 Autonomous Scripting:** Leverages **Gemini 1.5 Flash** to architect 300-word cinematic scripts with segment-wise timing.
+*   **⚡ Edge-TTS Integration:** Uses Microsoft's Neural engine for high-fidelity, human-like voice synthesis without API costs.
+*   **🖼️ Dynamic Asset Fetching:** Real-time metadata and high-res backdrop retrieval from **TMDB**.
+*   **🎬 Automated Post-Production:** Programmatic video assembly using **MoviePy** including title cards, audio-video muxing, and clean transitions.
 
 ---
 
-## ⚙️ Setup Instructions
+## 🏗️ System Workflow
 
-### Step 1: Install Python
+1.  **Input:** User provides `Movie Name` + `Language`.
+2.  **Fetch:** `data_fetcher` pulls metadata, ratings, and backdrops.
+3.  **Think:** `script_generator` (Gemini) writes a time-coded cinematic script.
+4.  **Speak:** `voice_over` (Edge-TTS) generates high-quality narration.
+5.  **Render:** `video_assembler` crops assets, adds overlays, and merges everything into a final `.mp4`.
 
-Ensure you have Python 3.10 or higher installed. Check your version:
+---
 
+## 🛠️ Tech Stack
+
+| Component | Tool | Category |
+| :--- | :--- | :--- |
+| **Language Model** | Gemini 1.5 Flash | LLM / Generative AI |
+| **Audio Engine** | Edge TTS (Neural) | Text-to-Speech |
+| **Data Source** | TMDB API (v3) | Metadata & Media |
+| **Editing Engine** | MoviePy + FFmpeg | Video Processing |
+| **Core Logic** | Python 3.10+ | Programming |
+
+---
+
+## ⚙️ Quick Start
+
+### 1. Prerequisites
+Install **FFmpeg** (essential for audio/video processing):
+*   **Windows:** `choco install ffmpeg` (or download from ffmpeg.org)
+*   **Mac:** `brew install ffmpeg`
+
+### 2. Installation
 ```bash
-python --version
+# Clone the repository
+git clone [https://github.com/avneeshkum/imdb-video-generato.git](https://github.com/avneeshkum/imdb-video-generato.git)
 
-```
+# Enter the directory
+cd imdb-video-generato
 
-### Step 2: Install FFmpeg
-
-FFmpeg is required for video and audio processing.
-
-* **Windows:** Download from [ffmpeg.org](https://ffmpeg.org/download.html) and add to System PATH.
-* **Mac:** `brew install ffmpeg`
-* **Ubuntu/Linux:** `sudo apt install ffmpeg`
-
-### Step 3: Clone & Install Dependencies
-
-Navigate to the project folder and run:
-
-```bash
+# Install dependencies
 pip install -r requirements.txt
 
 ```
 
-### Step 4: Configure API Keys
+### 3. Configuration
 
-Open `config.py` and enter your keys:
+Edit `config.py` to include your API credentials:
 
 ```python
-TMDB_API_KEY   = "your_tmdb_key_here"
-GEMINI_API_KEY = "your_gemini_key_here"
+TMDB_API_KEY   = "your_tmdb_key"
+GEMINI_API_KEY = "your_gemini_key"
 
 ```
 
 ---
 
-## 🎥 Usage
+## 🎥 Execution
 
-You can now specify the language as an optional argument (`en` for English, `hi` for Hindi).
-
-**For Hindi Video:**
+Run the generator with your favorite movie and preferred language:
 
 ```bash
+# Generate in Hindi (Krrish 3)
 python main.py "Krrish 3" hi
 
-```
-
-**For English Video:**
-
-```bash
+# Generate in English (Interstellar)
 python main.py "Interstellar" en
 
 ```
 
-*The final video will be saved in the `output/` folder.*
+📂 **Output:** Final videos are saved in the `/output` folder.
 
 ---
 
-## 📂 Project Structure
+## 🎙️ Supported Voice Profiles
+
+| Language | Model | Personality |
+| --- | --- | --- |
+| **English** | `en-GB-RyanNeural` | Deep, Cinematic British |
+| **Hindi** | `hi-IN-MadhurNeural` | Professional Indian Narrator |
+
+---
+
+## 📂 Project Architecture
 
 ```text
-imdb_video_generator/
-├── main.py                ← Entry point (Handles inputs & workflow)
-├── config.py              ← Configuration & API Keys
-├── requirements.txt       ← Python dependencies
-├── modules/
-│   ├── data_fetcher.py     ← TMDB integration (Bilingual fetching)
-│   ├── script_generator.py ← AI logic for Hindi/English scripts
-│   ├── voice_over.py       ← Voice model switching (Madhur vs Ryan)
-│   └── video_assembler.py  ← Final MP4 rendering engine
-├── output/                ← Final generated videos
-└── temp/                  ← Temporary files (auto-cleaned)
+.
+├── main.py                # Main orchestrator
+├── config.py              # Centralized settings & keys
+├── requirements.txt       # Dependency manifest
+├── modules/               # Modularized logic units
+│   ├── data_fetcher.py    # TMDB API interface
+│   ├── script_generator.py# LLM Prompt Engineering
+│   ├── voice_over.py      # Audio synthesis
+│   └── video_assembler.py # Visual rendering engine
+└── output/                # Generated Video Assets
 
 ```
 
 ---
 
-## 🔑 How to Get API Keys
+## 🤝 Contributing
 
-### 1. TMDB API Key (For Movie Data)
+Feel free to fork this project and submit PRs! Suggestions for adding Ken Burns effects or automatic subtitles are welcome.
 
-1. Sign up at [TheMovieDB.org](https://www.themoviedb.org/signup).
-2. Go to **Settings** → **API** → **Create**.
-3. Copy the **API Key (v3 auth)** and paste it into `config.py`.
-
-### 2. Gemini API Key (For Scripts)
-
-1. Go to [Google AI Studio](https://aistudio.google.com).
-2. Click **"Get API Key"** → **"Create API Key"**.
-3. Copy the key and paste it into `config.py`.
-
----
-
-## 🎙️ Voice Models
-
-| Language | Default Voice Model | Style |
-| --- | --- | --- |
-| **English** | `en-GB-RyanNeural` | Cinematic British Male |
-| **Hindi** | `hi-IN-MadhurNeural` | Deep & Professional Indian Male |
-
-*You can change these in `config.py` to female voices like `en-US-JennyNeural` or `hi-IN-SwaraNeural`.*
-
----
-
-## 🛠️ Troubleshooting
-
-* **`ReadTimeout Error`**: TMDB server is slow. The code now has an increased timeout (30s) and error handling to skip missing images.
-* **`Silent Video`**: If you don't hear audio in VS Code, open the video in **VLC Media Player**. VS Code's internal player sometimes struggles with specific codecs.
-* **`ffmpeg not found`**: Ensure FFmpeg is correctly installed and added to your Environment Variables/PATH.
-
----
-
-**Developed by Avneesh**
-
-*Submitted as an AI Engineering Internship Assignment.*
+**Developed by [Avneesh**](https://www.google.com/search?q=https://github.com/avneeshkum)
+*Submitted as an AI Engineering Assignment*
