@@ -1,7 +1,7 @@
 # 🎬 AI IMDb Video Generator (Bilingual)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Framework: Gemini](https://img.shields.io/badge/AI-Gemini_1.5_Flash-orange.svg)](https://aistudio.google.com/)
+[![Framework: Gemini](https://img.shields.io/badge/AI-Gemini_3.0_Flash-orange.svg)](https://aistudio.google.com/)
 
 An autonomous AI pipeline that transforms a movie title into a full **2-minute cinematic summary video**. 
 Now featuring full **Bilingual (English & Hindi)** support for global and local audiences.
