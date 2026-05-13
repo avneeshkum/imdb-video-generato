@@ -32,7 +32,7 @@ Now featuring full **Bilingual (English & Hindi)** support for global and local 
 
 | Component | Tool | Category |
 | :--- | :--- | :--- |
-| **Language Model** | Gemini 1.5 Flash | LLM / Generative AI |
+| **Language Model** | Gemini 3.0 Flash | LLM / Generative AI |
 | **Audio Engine** | Edge TTS (Neural) | Text-to-Speech |
 | **Data Source** | TMDB API (v3) | Metadata & Media |
 | **Editing Engine** | MoviePy + FFmpeg | Video Processing |
@@ -50,10 +50,10 @@ Install **FFmpeg** (essential for audio/video processing):
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone [https://github.com/avneeshkum/imdb-video-generato.git](https://github.com/avneeshkum/imdb-video-generato.git)
+git clone https://github.com/avneeshkum/imdb-video-generator.git
 
 # Enter the directory
-cd imdb-video-generato
+cd imdb-video-generator
 
 # Install dependencies
 pip install -r requirements.txt
