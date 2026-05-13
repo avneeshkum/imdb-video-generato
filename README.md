@@ -120,5 +120,5 @@ python main.py "Interstellar" en
 
 Feel free to fork this project and submit PRs! Suggestions for adding Ken Burns effects or automatic subtitles are welcome.
 
-**Developed by [Avneesh**](https://www.google.com/search?q=https://github.com/avneeshkum)
-*Submitted as an AI Engineering Assignment*
+Developed by [Avneesh](https://www.google.com/search?q=https://github.com/avneeshkum)
+Submitted as an AI Engineering Assignment*
