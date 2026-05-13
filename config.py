@@ -20,5 +20,5 @@ TTS_VOICE_ENGLISH = "en-GB-RyanNeural"
 # hi-IN-SwaraNeural   -> Female (Clear & Smooth)
 TTS_VOICE_HINDI = "hi-IN-MadhurNeural"
 
-# Purane code ke saath compatibility ke liye (Default)
+
 TTS_VOICE = TTS_VOICE_ENGLISH
