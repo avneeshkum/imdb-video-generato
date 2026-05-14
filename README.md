@@ -11,7 +11,7 @@ Now featuring full **Bilingual (English & Hindi)** support for global and local 
 ## 🌟 Key Highlights
 
 *   **🌐 Bilingual Narration:** Swappable language logic for English (British/American) and Hindi (Natural Devanagari voiceover).
-*   **🤖 Autonomous Scripting:** Leverages **Gemini 1.5 Flash** to architect 300-word cinematic scripts with segment-wise timing.
+*   **🤖 Autonomous Scripting:** Leverages **Gemini 3.0 Flash** to architect 300-word cinematic scripts with segment-wise timing.
 *   **⚡ Edge-TTS Integration:** Uses Microsoft's Neural engine for high-fidelity, human-like voice synthesis without API costs.
 *   **🖼️ Dynamic Asset Fetching:** Real-time metadata and high-res backdrop retrieval from **TMDB**.
 *   **🎬 Automated Post-Production:** Programmatic video assembly using **MoviePy** including title cards, audio-video muxing, and clean transitions.
